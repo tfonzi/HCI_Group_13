@@ -88,14 +88,15 @@ class taskTableController: UIViewController, UITableViewDelegate, UITableViewDat
         let buttonPosition : CGPoint = (sender as AnyObject).convert(CGPoint.zero, to: self.tblTasks)
         let indexPath = self.tblTasks.indexPathForRow(at: buttonPosition)
         selectedCellNumber = indexPath!.row
-        //selectedCellNumber = sender.tag
         print(selectedCellNumber)
+        
     }
     // go to Cell Description
     @objc func buttonClicked(sender : UIButton!) {
         if sender.titleLabel?.text == "Details" {
-            performSegue(withIdentifier: "ListToDetails", sender: self)
-            
+            DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute: {
+                self.performSegue(withIdentifier: "ListToDetails",sender: self)
+            })
         }
  
     }

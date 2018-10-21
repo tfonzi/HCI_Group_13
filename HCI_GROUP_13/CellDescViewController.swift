@@ -10,19 +10,22 @@ class CellDescViewController: UIViewController {
     @IBOutlet var Cat: UISegmentedControl!
     @IBOutlet var Update: UIButton!
     
+    var index = selectedCellNumber
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        Name.text = taskMgr.tasks[selectedCellNumber].name
-        Desc.text = taskMgr.tasks[selectedCellNumber].desc
-        Loc.text = taskMgr.tasks[selectedCellNumber].loc
         
-        Prior.selectedSegmentIndex = taskMgr.tasks[selectedCellNumber].priority
+        print("in " ,index)
+        Name.text = taskMgr.tasks[index].name
+        Desc.text = taskMgr.tasks[index].desc
+        Loc.text = taskMgr.tasks[index].loc
         
-        if taskMgr.tasks[selectedCellNumber].cat == "Home" {
+        Prior.selectedSegmentIndex = taskMgr.tasks[index].priority
+        
+        if taskMgr.tasks[index].cat == "Home" {
             Cat.selectedSegmentIndex = 0
         }
-        else if taskMgr.tasks[selectedCellNumber].cat == "School" {
+        else if taskMgr.tasks[index].cat == "School" {
             Cat.selectedSegmentIndex = 1
         }
         else {
@@ -47,7 +50,7 @@ class CellDescViewController: UIViewController {
         }
         let category = Cat.titleForSegment(at: Cat.selectedSegmentIndex)
         
-        taskMgr.updateTask(name: Name.text!, desc: Desc.text!, loc: Loc.text!, priority: priorNum, cat: category!, index: selectedCellNumber)
+        taskMgr.updateTask(name: Name.text!, desc: Desc.text!, loc: Loc.text!, priority: priorNum, cat: category!, index: index)
         
     }
     
