@@ -19,11 +19,17 @@ class TaskManager: NSObject {
     }
     
     func updateTask(name: String, desc: String, loc: String, priority: Int, cat: String, index: Int){
+        print("index: ", index)
+        print("name: ", name)
+        
         tasks[index].name = name
         tasks[index].desc = desc
         tasks[index].loc = loc
         tasks[index].priority = priority
         tasks[index].cat = cat
+        
+        print("New name: ", name)
+        
     }
     
     func sortTask(_ tasks: [task]) -> [task]{

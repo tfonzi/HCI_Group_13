@@ -88,7 +88,6 @@ class taskTableController: UIViewController, UITableViewDelegate, UITableViewDat
         let buttonPosition : CGPoint = (sender as AnyObject).convert(CGPoint.zero, to: self.tblTasks)
         let indexPath = self.tblTasks.indexPathForRow(at: buttonPosition)
         selectedCellNumber = indexPath!.row
-        print(selectedCellNumber)
         
     }
     // go to Cell Description

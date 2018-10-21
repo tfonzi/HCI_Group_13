@@ -145,7 +145,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
-                                    <action selector="buttonUpdate_ClickWithSender:" destination="LjK-kb-AAX" eventType="touchDragInside" id="l5S-5M-9gy"/>
+                                    <action selector="buttonUpdate_ClickWithSender:" destination="LjK-kb-AAX" eventType="touchUpInside" id="Z7B-FR-GDC"/>
                                 </connections>
                             </button>
                         </subviews>

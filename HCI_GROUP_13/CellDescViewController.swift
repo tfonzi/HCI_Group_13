@@ -15,7 +15,6 @@ class CellDescViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("in " ,index)
         Name.text = taskMgr.tasks[index].name
         Desc.text = taskMgr.tasks[index].desc
         Loc.text = taskMgr.tasks[index].loc
