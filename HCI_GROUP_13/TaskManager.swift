@@ -19,8 +19,7 @@ class TaskManager: NSObject {
     }
     
     func updateTask(name: String, desc: String, loc: String, priority: Int, cat: String, index: Int){
-        print("index: ", index)
-        print("name: ", name)
+        
         
         tasks[index].name = name
         tasks[index].desc = desc
@@ -28,17 +27,17 @@ class TaskManager: NSObject {
         tasks[index].priority = priority
         tasks[index].cat = cat
         
-        print("New name: ", name)
+        
         
     }
     
     func sortTask(_ tasks: [task]) -> [task]{
+        print("sort started")
         guard tasks.count > 1 else {return tasks}
-        
         let pivot = tasks[tasks.count/2]
-        let less = tasks.filter {$0.priority < pivot.priority}
+        let less = tasks.filter {$0.priority > pivot.priority}
         let equal = tasks.filter {$0.priority == pivot.priority}
-        let greater = tasks.filter { $0.priority > pivot.priority}
+        let greater = tasks.filter { $0.priority < pivot.priority}
         
         return sortTask(less) + equal + sortTask(greater)
     }

@@ -102,6 +102,7 @@ class taskTableController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func sortButtonTap(_ sender: Any) {
         taskMgr.tasks = taskMgr.sortTask(taskMgr.tasks)
+        tblTasks.reloadData()
         
     }
     
