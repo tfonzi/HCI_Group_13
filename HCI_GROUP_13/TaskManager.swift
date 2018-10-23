@@ -32,7 +32,7 @@ class TaskManager: NSObject {
     }
     
     func sortTask(_ tasks: [task]) -> [task]{
-        print("sort started")
+        
         guard tasks.count > 1 else {return tasks}
         let pivot = tasks[tasks.count/2]
         let less = tasks.filter {$0.priority > pivot.priority}
