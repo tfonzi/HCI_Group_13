@@ -39,8 +39,7 @@ class AddTaskController: UIViewController, UITextFieldDelegate {
         prioritySelc.selectedSegmentIndex = 0
         categorySelc.selectedSegmentIndex = 0
         
-        //sends user back to task view
-        self.tabBarController?.selectedIndex = 0;
+        
     }
     
     //descelect type

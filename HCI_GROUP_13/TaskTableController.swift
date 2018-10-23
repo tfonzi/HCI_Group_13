@@ -100,12 +100,17 @@ class taskTableController: UIViewController, UITableViewDelegate, UITableViewDat
  
     }
     
-    @IBAction func sortButtonTap(_ sender: Any) {
-        taskMgr.tasks = taskMgr.sortTask(taskMgr.tasks)
+    @IBAction func sortPriorityButtonTap(_ sender: Any) {
+        taskMgr.tasks = taskMgr.sortPriority(taskMgr.tasks)
         tblTasks.reloadData()
         
     }
     
+    @IBAction func sortNameButtonTap(_ sender: Any) {
+        taskMgr.tasks = taskMgr.sortName(taskMgr.tasks)
+        tblTasks.reloadData()
+        
+    }
     
     
     //delete cell
