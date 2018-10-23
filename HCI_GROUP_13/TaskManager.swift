@@ -31,7 +31,7 @@ class TaskManager: NSObject {
         
     }
     
-    func sortTask(_ tasks: [task]) -> [task]{
+    func sortPriority(_ tasks: [task]) -> [task]{
         
         guard tasks.count > 1 else {return tasks}
         let pivot = tasks[tasks.count/2]
@@ -39,7 +39,18 @@ class TaskManager: NSObject {
         let equal = tasks.filter {$0.priority == pivot.priority}
         let greater = tasks.filter { $0.priority < pivot.priority}
         
-        return sortTask(less) + equal + sortTask(greater)
+        return sortPriority(less) + equal + sortPriority(greater)
     }
     
+    
+    func sortName(_ tasks: [task]) -> [task]{
+        
+        guard tasks.count > 1 else {return tasks}
+        let pivot = tasks[tasks.count/2]
+        let less = tasks.filter {$0.name < pivot.name}
+        let equal = tasks.filter {$0.name == pivot.name}
+        let greater = tasks.filter { $0.name > pivot.name}
+        
+        return sortName(less) + equal + sortName(greater)
+    }
 }
