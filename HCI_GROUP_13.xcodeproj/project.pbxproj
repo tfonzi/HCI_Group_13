@@ -217,7 +217,7 @@
 				};
 			};
 			buildConfigurationList = 628021E5216FA49000CA1168 /* Build configuration list for PBXProject "HCI_GROUP_13" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
